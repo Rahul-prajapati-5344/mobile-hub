@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details | Mobile Hub</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/product.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a href="index.html" class="brand">
+          <img src="images/logo/logo.png" alt="Mobile Hub logo" class="brand-logo" />
+          <span class="brand-text">Mobile Hub</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="mobiles.html">Mobiles</a>
+          <a href="accesories.html">Accessories</a>
+          <a href="wishlist.html" class="nav-icon">♡ Wishlist</a>
+          <a href="cart.html" class="nav-icon">🛒 Cart</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="product-page">
+        <div class="container product-layout">
+          <div class="product-gallery">
+            <div class="main-image">
+              <span>Image Placeholder</span>
+            </div>
+            <div class="thumbnail-row">
+              <div class="thumbnail"><span>Thumb 1</span></div>
+              <div class="thumbnail"><span>Thumb 2</span></div>
+              <div class="thumbnail"><span>Thumb 3</span></div>
+            </div>
+          </div>
+
+          <div class="product-info">
+            <p class="product-brand" id="productBrand">Apple</p>
+            <h1 id="productTitle">iPhone 17 Pro Max</h1>
+            <div class="rating">★★★★★ <span>4.8 (124 reviews)</span></div>
+            <p class="price" id="productPrice">₹1,49,900</p>
+            <p class="description" id="productDescription">
+              A premium flagship smartphone with a powerful display, advanced camera system, and smooth everyday performance.
+            </p>
+            <p class="availability" id="productAvailability">In Stock</p>
+
+            <div class="spec-section">
+              <h3>Specifications</h3>
+              <ul id="specList">
+                <li><strong>RAM:</strong> 8GB</li>
+                <li><strong>Storage:</strong> 256GB</li>
+                <li><strong>Display:</strong> 6.7-inch Super Retina XDR</li>
+                <li><strong>Processor:</strong> A19 Pro Chip</li>
+                <li><strong>Camera:</strong> Triple 48MP system</li>
+                <li><strong>Battery:</strong> 5000mAh</li>
+              </ul>
+            </div>
+
+            <div class="quantity-row">
+              <label for="quantity">Quantity</label>
+              <div class="quantity-control">
+                <button class="qty-btn" type="button" data-action="minus">−</button>
+                <input id="quantity" type="number" value="1" min="1" />
+                <button class="qty-btn" type="button" data-action="plus">+</button>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <button class="btn btn-primary add-to-cart-btn" type="button" data-name="iPhone 17 Pro Max" data-brand="Apple" data-price="149900">Add to Cart</button>
+              <button class="btn btn-secondary" type="button">Add to Wishlist</button>
+              <button class="btn btn-dark" type="button">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <h3>Mobile Hub</h3>
+          <p>Premium gadgets for modern lifestyles.</p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mobiles.html">Mobiles</a></li>
+            <li><a href="accesories.html">Accessories</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p>© 2026 Mobile Hub. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/wishlist.js"></script>
+  </body>
+</html>

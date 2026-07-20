@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | Mobile Hub</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/payment.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a href="index.html" class="brand">
+          <img src="images/logo/logo.png" alt="Mobile Hub logo" class="brand-logo" />
+          <span class="brand-text">Mobile Hub</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="mobiles.html">Mobiles</a>
+          <a href="accessories.html">Accessories</a>
+          <a href="wishlist.html" class="nav-icon">♡ Wishlist</a>
+          <a href="cart.html" class="nav-icon">🛒 <span class="cart-badge" id="cartBadge">0</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <p class="eyebrow">Secure Checkout</p>
+          <h1>Complete Your Order</h1>
+          <p>Review your items, enter your details, and choose a fake demo payment method.</p>
+        </div>
+      </section>
+
+      <section class="payment-section">
+        <div class="container payment-layout">
+          <div class="checkout-panel">
+            <div id="emptyState" class="empty-state hidden">
+              <h3>Your cart is empty</h3>
+              <p>Add a phone or accessory first to continue checkout.</p>
+              <a href="mobiles.html" class="btn btn-primary">Shop Mobiles</a>
+            </div>
+
+            <div id="checkoutFormCard" class="section-card">
+              <h2>Checkout Details</h2>
+              <form id="checkoutForm" novalidate>
+                <div class="form-grid">
+                  <div class="field-group">
+                    <label for="fullName">Full Name</label>
+                    <input id="fullName" name="fullName" type="text" />
+                  </div>
+                  <div class="field-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input id="mobile" name="mobile" type="tel" />
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div class="field-group">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" />
+                  </div>
+                  <div class="field-group">
+                    <label for="address">Address</label>
+                    <input id="address" name="address" type="text" />
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div class="field-group">
+                    <label for="city">City</label>
+                    <input id="city" name="city" type="text" />
+                  </div>
+                  <div class="field-group">
+                    <label for="state">State</label>
+                    <input id="state" name="state" type="text" />
+                  </div>
+                </div>
+
+                <div class="field-group">
+                  <label for="pinCode">PIN Code</label>
+                  <input id="pinCode" name="pinCode" type="text" />
+                </div>
+
+                <div class="field-group">
+                  <label>Payment Method</label>
+                  <div class="payment-options">
+                    <label class="option-card">
+                      <input type="radio" name="paymentMethod" value="card" checked />
+                      <span>Credit / Debit Card</span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="paymentMethod" value="upi" />
+                      <span>UPI</span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="paymentMethod" value="cod" />
+                      <span>Cash on Delivery</span>
+                    </label>
+                    <label class="option-card">
+                      <input type="radio" name="paymentMethod" value="qr" />
+                      <span>Scan QR Code</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div id="cardFields" class="payment-fields">
+                  <div class="form-grid">
+                    <div class="field-group">
+                      <label for="cardNumber">Card Number</label>
+                      <input id="cardNumber" name="cardNumber" type="text" />
+                    </div>
+                    <div class="field-group">
+                      <label for="cardName">Cardholder Name</label>
+                      <input id="cardName" name="cardName" type="text" />
+                    </div>
+                  </div>
+                  <div class="form-grid">
+                    <div class="field-group">
+                      <label for="expiryDate">Expiry Date</label>
+                      <input id="expiryDate" name="expiryDate" type="text" placeholder="MM/YY" />
+                    </div>
+                    <div class="field-group">
+                      <label for="cvv">CVV</label>
+                      <input id="cvv" name="cvv" type="password" />
+                    </div>
+                  </div>
+                </div>
+
+                <div id="upiFields" class="payment-fields hidden">
+                  <div class="field-group">
+                    <label for="upiId">UPI ID</label>
+                    <input id="upiId" name="upiId" type="text" placeholder="yourname@upi" />
+                  </div>
+                </div>
+
+                <div id="qrFields" class="payment-fields hidden">
+                  <div class="qr-card">
+                    <img src="images/payment/payment-qr.png" alt="Demo QR code for payment" />
+                    <p class="qr-title">Scan this QR code to pay</p>
+                    <p id="qrAmount" class="qr-amount">₹0</p>
+                    <p class="qr-note">Demo payment only - No real transaction will be processed.</p>
+                    <button type="button" id="completeQrButton" class="btn btn-primary">I Have Completed Payment</button>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Place Order</button>
+              </form>
+            </div>
+          </div>
+
+          <aside class="order-panel">
+            <div class="section-card">
+              <h2>Order Summary</h2>
+              <div id="orderItems"></div>
+              <div class="summary-row">
+                <span>Items</span>
+                <span id="summaryItems">0</span>
+              </div>
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="summarySubtotal">₹0</span>
+              </div>
+              <div class="summary-row">
+                <span>Delivery</span>
+                <span>Free</span>
+              </div>
+              <div class="summary-row total-row">
+                <span>Total</span>
+                <span id="summaryTotal">₹0</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div>
+          <h3>Mobile Hub</h3>
+          <p>Premium gadgets for modern lifestyles.</p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mobiles.html">Mobiles</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p>© 2026 Mobile Hub. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="successModal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <h3>Order Placed Successfully!</h3>
+        <p id="successText">Your fake order has been placed.</p>
+        <a href="mobiles.html" class="btn btn-primary">Continue Shopping</a>
+      </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/payment.js"></script>
+  </body>
+</html>
